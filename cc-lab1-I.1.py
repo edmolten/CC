@@ -1,5 +1,6 @@
+from decimal import Decimal
 def show(exp, x):
-    print exp, " = ", x
+    print exp, " = ", Decimal(x)
 
 #Distacia 1.1
 
