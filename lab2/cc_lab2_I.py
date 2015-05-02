@@ -7,6 +7,7 @@ x = symbols("x")
 def Bisection(f,a,b,TOL):
     if (f.subs(x,a)*f.subs(x,b) >= 0):
         print "Esta funcion no cumple con requisitos de Bisection Method"
+    c = (a+b)/2
     while((b-a)/2 > TOL):
         c = (a+b)/2
         if(f.subs(x,c) == 0):
@@ -15,6 +16,7 @@ def Bisection(f,a,b,TOL):
             b=c
         else:
             a=c
+    return c
 
 # Secant method --- revisar ---
 
