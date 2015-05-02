@@ -29,7 +29,7 @@ def SecantM(f,X_0,X_1,n):
     for i in range(n):
         fut = pre - (f.subs(x,pre) * (pre - past))/(f.subs(x,pre) - f.subs(x,past))
         print fut
-        if (pre == fut):
+        if (f.subs(x,pre) == 0):
             return pre
         past = pre
         pre = fut
@@ -57,8 +57,18 @@ def NewtonM(f,X_0,n):
     for i in range(n):
         pre = past - f.subs(x,past)/diff(f,x).subs(x,past)
         print pre
-        if (pre == past):
+        if (f.subs(x,pre) == 0):
             return pre
         past = pre
     return pre
     
+def NewtonMod(f,X_0,m,n):
+    f = sympify(f)
+    past = X_0
+    for i in range(n):
+        pre = past - m * f.subs(x,past)/diff(f,x).subs(x,past)
+        print pre
+        if (f.subs(x,pre) == 0):
+            return pre
+        past = pre
+    return pre
