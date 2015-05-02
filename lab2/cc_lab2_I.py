@@ -8,6 +8,7 @@ def Bisection(f,a,b,TOL):
     f = sympify(f)
     if (f.subs(x,a)*f.subs(x,b) >= 0):
         print "Esta funcion no cumple con requisitos de Bisection Method"
+        return None
     c = (a+b)/2
     while((b-a)/2 > TOL):
         c = (a+b)/2
