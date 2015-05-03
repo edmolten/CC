@@ -2,6 +2,8 @@ from sympy import *
 from cc_lab2_I import *
 from math import pi
 
+#------------------------(1)-------------------------------------
+
 #Solo funciona con expresiones de una variable "x"
 def eva(f,x_value):
     """
@@ -33,3 +35,15 @@ def getC(f,x0,x):
 
 f = sympify("cos(x)")
 print getC(f,pi/2,pi)
+
+#-------------------------(2)-----------------------------------
+
+xs = []
+inc = (0.8 + 0.75) / 100
+init = 0.8
+for i in range(0,100):
+   xs.append(init)
+   
+   
+    
+print xs
