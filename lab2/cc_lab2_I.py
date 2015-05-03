@@ -61,4 +61,4 @@ def NewtonM(f,X_0,n):
             return pre
         past = pre
     return pre
-    
+
