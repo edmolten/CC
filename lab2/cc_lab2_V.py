@@ -31,6 +31,7 @@ def getF(f,x0,x):
 def getC(f,x0,x):
     TOL = 0.00000001
     F = getF(f,x0,x)
+    print F
     return Bisection(F,0,pi,TOL)
 
 f = sympify("cos(x)")

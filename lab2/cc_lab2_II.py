@@ -38,6 +38,10 @@ def printArreglo(ar):
     for i in ar:
         print i
 
+def generarTabla(linealConv,superLinealConv,quadraticConv):
+    for i in range(len(linealConv)):
+        print str(linealConv[i]) + "  &  " + str(superLinealConv[i]) + "  &  " + str(quadraticConv[i]) + "  \\\\ \hline"
+
 # para las funciones del item III
 
 TOL = 0.000000001
