@@ -9,6 +9,7 @@ def NewFixedPoint(g,r,X_0,n):
     dgr = dg.subs(x,r)
     M = dgr / (dgr - 1)
     G = g + M * (x - g)
+    print G
     past = X_0
     for i in range(n):
         pre = G.subs(x,past)
@@ -18,4 +19,4 @@ def NewFixedPoint(g,r,X_0,n):
         past = pre
     return pre
 
-print NewFixedPoint("exp(2*x)-1",0.0,2,40)
+print NewFixedPoint("exp(2*x)-1",1.0,2.0,50)
