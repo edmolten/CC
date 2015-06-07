@@ -1,14 +1,18 @@
 import numpy as np
 
-def reduced_SVD(A):
-	U,S,V = np.linalg.svd(A,False)
+def full_SVD(A):
+	U,s,V = np.linalg.svd(A)
 	U = np.round(U,3)
-	S = np.round(np.diag(S),3)
+	shape = A.shape
+	m = shape[0]
+	n = shape[1]
+	S = np.zeros((m,n))
+	S[:n,:n] = np.diag(np.round(s,3))
 	V = np.round(V,3)
 	return U, S, V
-
+	
 A = np.array([[1,1,1,1],[1,-1,1,1],[1,1,-1,1],[-1,-1,-1,1],[1,1,1,-1]])
-U, S, V = reduced_SVD(A)
+U,S,V = full_SVD(A)
 print "U = "
 print U
 print "Sigma = "
