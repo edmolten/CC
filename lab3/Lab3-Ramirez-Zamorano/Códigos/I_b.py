@@ -11,12 +11,14 @@ def full_SVD(A):
 	V = np.round(V,3)
 	return U, S, V
 	
-A = np.array([[1,1,1,1],[1,-1,1,1],[1,1,-1,1],[-1,-1,-1,1],[1,1,1,-1]])
-U,S,V = full_SVD(A)
-print "U = "
-print U
-print "Sigma = "
-print S
-print "V = "
-print V
+def exe_b():
+	A = np.array([[1,1,1,1],[1,-1,1,1],[1,1,-1,1],[-1,-1,-1,1],[1,1,1,-1]])
+	U, S, V = full_SVD(A)
+	print "U = "
+	print U
+	print "Sigma = "
+	print S
+	print "V = "
+	print V
 
+#exe_b()

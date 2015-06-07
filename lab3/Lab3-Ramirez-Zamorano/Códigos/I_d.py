@@ -1,32 +1,27 @@
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
+from I_c import *
 
-def get_puntos_3D():
-	archivo_puntos = open("Datasets/data_set_elipse.txt", "r")
-	puntos = []
-	for linea in archivo_puntos:
-		punto_str = linea.strip().split(" ")
-		x = float(punto_str[0])
-		y = float(punto_str[1])
-		z = float(punto_str[2])
-		punto = [x,y,z]
-		puntos.append(punto)
-	archivo_puntos.close()
-	return puntos
+puntos = get_puntos()
+xs,ys,zs = get_componentes(puntos)
 
-def get_componentes_3D(puntos):
-	xs = []
-	ys = []
-	zs = []
-	for x,y,z in puntos:
-		xs.append(x)
-		ys.append(y)
-		zs.append(z)
-	return xs, ys, zs
+A = np.zeros((150,3))
+A[:,0] = xs
+A[:,1] = ys
+A[:,2] = zs
+print A
+_,_,V = reduced_SVD(A)
+vp1 = V[:,0]
+vp2 = V[:,1]
+vp3 = V[:,2]
+print vp1
+print vp2
+print vp3
 
-puntos = get_puntos_3D()
-xs,ys,zs = get_componentes_3D(puntos)
+"""
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 ax.scatter(xs,ys,zs)
+incluir vectores!!!
 plt.show()
+"""
