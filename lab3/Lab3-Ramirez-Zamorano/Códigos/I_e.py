@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-#--------------------1---------------------
 
 def reduced_SVD(A):
 	U,S,V = np.linalg.svd(A,False)
@@ -18,6 +17,7 @@ def get_puntos():
 		for componente in punto_str:
 			punto.append(float(componente))
 		puntos.append(punto)
+	archivo_puntos.close()
 	return puntos
 
 def get_Xm(X,m):
@@ -27,26 +27,10 @@ def get_Xm(X,m):
 	p = shape[1]
 	C = np.dot(U,S)
 	D = V
-	#m = int(n/2) #podria ser cualquier otro valor 1<=m<=p
 	Cnm = C[:,:m]
 	Dmp = D[:m,:]
 	Xm = np.dot(Cnm,Dmp)
 	return Xm
-
-
-
-"""
-print "X=" 
-print X
-print "Cnm="
-print Cnm
-print "Dmp="
-print Dmp
-print "Xm="
-print Xm
-"""
-
-#--------------------2---------------------
 
 def get_normas(X):
 	p = X.shape[1]
@@ -62,10 +46,3 @@ X = np.array(get_puntos())
 ms, normas = get_normas(X) #toma unos segundos
 plt.plot(ms, normas,'go')
 plt.show() 
-
-#-------------------3-----------------------
-
-
-
-
-

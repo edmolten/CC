@@ -9,6 +9,7 @@ def get_puntos_2D():
 		y = float(punto_str[1])
 		punto = [x,y]
 		puntos.append(punto)
+	archivo_puntos.close()
 	return puntos
 
 def get_componentes_2D(puntos):

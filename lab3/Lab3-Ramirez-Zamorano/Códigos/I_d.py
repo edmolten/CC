@@ -11,6 +11,7 @@ def get_puntos_3D():
 		z = float(punto_str[2])
 		punto = [x,y,z]
 		puntos.append(punto)
+	archivo_puntos.close()
 	return puntos
 
 def get_componentes_3D(puntos):
