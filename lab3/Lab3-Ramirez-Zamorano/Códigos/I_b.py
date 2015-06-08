@@ -21,4 +21,4 @@ def exe_b():
 	print "V = "
 	print V
 
-#exe_b()
+exe_b()

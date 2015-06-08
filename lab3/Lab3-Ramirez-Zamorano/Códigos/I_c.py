@@ -40,7 +40,7 @@ def exe_c():
 	vxs = [vp1[0],vp2[0]]
 	vys = [vp1[1],vp2[1]]
 	plt.plot(xs,ys,'go')
-	plt.quiver(vxs,vys)
+	plt.quiver(0,0,vxs,vys)
 	plt.show()
 
 exe_c()
