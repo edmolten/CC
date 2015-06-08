@@ -37,9 +37,11 @@ def exe_c():
 	vp2 = V[:,1]
 	print vp1
 	print vp2
-	#plt.plot(xs,ys,'go')
-	#incluir vectores!
-	#plt.show()
+	vxs = [vp1[0],vp2[0]]
+	vys = [vp1[1],vp2[1]]
+	plt.plot(xs,ys,'go')
+	plt.quiver(vxs,vys)
+	plt.show()
 
-#exe_c()
+exe_c()
 

@@ -44,5 +44,8 @@ def get_normas(X):
  
 X = np.array(get_puntos())
 ms, normas = get_normas(X) #toma unos segundos
+r = np.polyfit(ms,normas,1)
+print "pendiente = ", r[0]
+print "coeficiente = ", r[1]
 plt.plot(ms, normas,'go')
 plt.show() 
