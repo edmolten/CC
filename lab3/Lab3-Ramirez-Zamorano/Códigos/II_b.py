@@ -2,6 +2,7 @@ from II_a import get_datos, get_sepal_petal
 from I_b import full_SVD
 from numpy import *
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def sepal_matrix(matrix):
@@ -22,7 +23,7 @@ def petal_matrix(matrix):
 
 datos = get_datos()
 sls, sws, pls, pws = get_sepal_petal(datos)
-titulos = [" Sepal Lenght vs Sepal Width "," Petal Lenght vs Petal Width "]
+titulos = [" Sepal Lenght vs Sepal Width 2.0 "," Petal Lenght vs Petal Width 2.0 "]
 datos = array(datos)
 
 
@@ -41,7 +42,12 @@ petal = petal_matrix(datos)
 Us, Ss, Vs = full_SVD(sepal[0:len(sepal),0:2])
 Up, Sp, Vp = full_SVD(petal[0:len(petal),2:4])
 
+finalSepal = np.dot(datos[0: , 1:3], Vs)
+finalPetal = np.dot(datos[0: , 3:] , Vp)
+caracteristicas = [[finalSepal[0:,0],finalSepal[0:,1]],[finalPetal[0:,0],finalPetal[0:,1]]]
 
-
-
+for i in range(len(titulos)): # se generan los graficos
+    plt.title(titulos[i])
+    plt.plot(caracteristicas[i][0],caracteristicas[i][1],'go')
+    plt.show()
 
