@@ -35,9 +35,9 @@ datos = get_datos()
 sls, sws, pls, pws = get_sepal_petal(datos)
 titulos = [" Sepal Lenght vs Sepal Width "," Petal Lenght vs Petal Width "]
 caracteristicas = [[sls,sws],[pls,pws]]
-for i in range(len(titulos)):
-        print i
-        plt.title(titulos[i])
-        plt.plot(caracteristicas[i][0],caracteristicas[i][1],'go')
-        plt.show()
+if __name__ == '__main__': # Para ocupar las funciones en II.b
+        for i in range(len(titulos)): # se generan los graficos
+                plt.title(titulos[i])
+                plt.plot(caracteristicas[i][0],caracteristicas[i][1],'go')
+                plt.show()
 
